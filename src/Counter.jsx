@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, reset } from './store/CounterReducer'
+import { decrement, increment, reset } from './reducers/CounterReducer'
 
 export default function Counter() {
 
     const dispatch = useDispatch();
-
-    const count = useSelector(state => state.value);
+    const count = useSelector(state => state.counter.value);
 
     return (
         <div>
@@ -31,7 +30,6 @@ export default function Counter() {
             >
                 Reset
             </button>
-
         </div>
     )
 }
